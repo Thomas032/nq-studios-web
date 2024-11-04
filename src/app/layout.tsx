@@ -1,12 +1,26 @@
 import type { Metadata } from "next";
+import { Poppins } from "@next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Empowero",
-  description: "Empowr your business with next level technology",
+  description: "Empower your business with next level technology",
 };
+
+const links = [
+  { href: "#processes", label: "Our Processes" },
+  { href: "#references", label: "References" },
+  { href: "#pricelist", label: "Pricelist" },
+  { href: "#team", label: "Our Team" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function RootLayout({
   children,
@@ -16,15 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/icons/logo.ico" />
+        <link rel="icon" href="/icons/logo_v2.ico" />
       </head>
-      <body className="flex flex-col min-h-screen">
-        {" "}
-        {/* Set body to flex column and full height */}
-        <Header />
-        <main className="flex-grow container mx-auto p-4">{children}</main>{" "}
-        {/* Allow main to grow */}
-        <Footer />
+      <body className={`flex flex-col ${poppins.className}`}>
+        <Header links={links} />
+        <main>{children}</main>
+        <Footer links={links} />
       </body>
     </html>
   );

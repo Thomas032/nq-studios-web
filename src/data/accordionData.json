@@ -1,0 +1,66 @@
+[
+  {
+    "id": "item-1",
+    "title": "First Approach",
+    "content": {
+      "image": "/images/process_placeholder.png",
+      "alt": "First Approach",
+      "heading": "First Approach",
+      "description": "We begin our collaboration with an introductory consultation. During this initial contact, we aim to understand your project needs, objectives, and vision. This step sets the foundation for our partnership.",
+      "items": [
+        "Discussing your project goals",
+        "Understanding your vision",
+        "Identifying key requirements"
+      ],
+      "buttonText": "To Meeting"
+    }
+  },
+  {
+    "id": "item-2",
+    "title": "Meeting",
+    "content": {
+      "image": "/images/process_placeholder.png",
+      "alt": "Meeting",
+      "heading": "Meeting",
+      "description": "In our follow-up meeting, we delve deeper into the details of your project. This session allows us to refine our approach based on your feedback and ensure that we are aligned on the project scope and expectations.",
+      "items": [
+        "Reviewing initial project concepts",
+        "Gathering detailed feedback",
+        "Aligning on project deliverables"
+      ],
+      "buttonText": "To Review"
+    }
+  },
+  {
+    "id": "item-3",
+    "title": "Review",
+    "content": {
+      "image": "/images/process_placeholder.png",
+      "alt": "Review",
+      "heading": "Review",
+      "description": "Once the initial work is completed, we conduct a thorough review of the project. This is an opportunity for you to assess the progress and provide additional input, ensuring that the final outcome meets your expectations.",
+      "items": [
+        "Comprehensive project assessment",
+        "Collecting your feedback",
+        "Making necessary adjustments"
+      ],
+      "buttonText": "To Final Delivery"
+    }
+  },
+  {
+    "id": "item-4",
+    "title": "Final Delivery",
+    "content": {
+      "image": "/images/process_placeholder.png",
+      "alt": "Final Delivery",
+      "heading": "Final Delivery",
+      "description": "Upon completion, we deliver the final project to you. This includes all necessary documentation and resources, ensuring a smooth transition and providing you with ongoing support as needed.",
+      "items": [
+        "Project handover",
+        "Providing documentation",
+        "Post-delivery support"
+      ],
+      "buttonText": "Get in Touch"
+    }
+  }
+]
