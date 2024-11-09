@@ -23,7 +23,7 @@ export default function AccordionDemo() {
       {data.map((item) => (
         <AccordionItem key={item.id} value={item.id}>
           <AccordionTrigger className="text-xl flex justify-between items-center py-4 hover:no-underline">
-            <span className="w-full flex flex-row gap-5 items-center">
+            <span className="w-full flex flex-row gap-5 items-center lg:text-base">
               <span className="ring-1 ring-black w-5 h-5 text-sm rounded-full items-center justify-center">
                 {data.indexOf(item) + 1}
               </span>
@@ -43,12 +43,14 @@ export default function AccordionDemo() {
               </div>
               <div className="lg:w-1/2 flex flex-col space-y-6">
                 <h3 className="text-3xl font-medium">{item.content.heading}</h3>
-                <p>{item.content.description}</p>
+                <p className="text-lg lg:text-base">
+                  {item.content.description}
+                </p>
                 <ul className="list-none space-y-2 font-medium">
                   {item.content.items.map((listItem, index) => (
                     <li
                       key={index}
-                      className="flex flex-row items-center gap-2"
+                      className="flex flex-row items-center gap-2 text-lg lg:text-base"
                     >
                       <CiCircleCheck />
                       {listItem}

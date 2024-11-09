@@ -26,9 +26,10 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({
           height={500}
           className="w-full"
         />
-        <h4 className="text-xl font-medium">{title}</h4>
-        <p className="text-sm">{description}</p>
-        <a href={link} className="text-sm text-[#01A7E1] underline">
+
+        <h4 className="text-2xl lg:text-xl font-medium">{title}</h4>
+        <p className="text-lg lg:text-sm">{description}</p>
+        <a href={link} className="text-lg lg:text-sm text-[#01A7E1] underline">
           Visit website
         </a>
       </CardContent>

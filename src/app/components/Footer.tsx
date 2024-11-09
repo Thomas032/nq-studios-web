@@ -1,7 +1,13 @@
+"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button"; // Import the Button from Shadcn
 
 const Footer = ({ links }: { links: { href: string; label: string }[] }) => {
+  const openContactDialog = () => {
+    // Create and dispatch a custom event
+    const event = new Event("openContact");
+    window.dispatchEvent(event);
+  };
   return (
     <footer className="bg-black text-white py-10 px-6 mt-auto flex flex-col relative lg:px-24 lg:py-12 overflow-hidden">
       <Image
@@ -28,15 +34,25 @@ const Footer = ({ links }: { links: { href: string; label: string }[] }) => {
         <div className="hidden lg:flex-col lg:mr-auto lg:flex">
           <span className="font-bold text-xl mb-12">Navigation</span>
           <nav className="flex flex-col space-y-2">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="hover:text-zinc-300 duration-500"
-              >
-                {link.label}
-              </a>
-            ))}
+            {links.map((link) =>
+              link.href === "#contact" ? (
+                <span
+                  key={link.href}
+                  onClick={openContactDialog}
+                  className="hover:text-zinc-300 duration-500 cursor-pointer"
+                >
+                  {link.label}
+                </span>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="hover:text-zinc-300 duration-500"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </nav>
         </div>
 

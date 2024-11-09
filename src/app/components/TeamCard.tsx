@@ -20,8 +20,8 @@ const TeamCard: React.FC<TeamCardProps> = ({
   link,
 }) => {
   return (
-    <Card className="border-none shadow-none p-0">
-      <CardContent className="flex flex-col items-start justify-center gap-3 relative p-0">
+    <Card className="border-none shadow-none p-0 z-0">
+      <CardContent className="flex flex-col items-start justify-center gap-3 relative p-0 z-0">
         <Badge className="absolute top-2 left-2 cursor-default hover:bg-black">
           {position}
         </Badge>

@@ -9,7 +9,7 @@ interface LinkStripProps {
 
 const LinkStrip: React.FC<LinkStripProps> = ({ message, buttonText, link }) => {
   return (
-    <div className="w-full px-20 py-5 bg-zinc-100 flex flex-row justify-between items-center">
+    <div className="w-full px-6 lg:px-20 py-5 bg-zinc-100 flex flex-col space-y-5 lg:flex-row justify-between items-center">
       <span className="text-md font-medium">{message}</span>
       <Link href={link}>
         <Button className="bg-[#01A7E1] text-white  hover:bg-[#018DBF]">

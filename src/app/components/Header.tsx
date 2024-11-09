@@ -6,6 +6,12 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Header = ({ links }: { links: { href: string; label: string }[] }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const openContactDialog = () => {
+    // Create and dispatch a custom event
+    const event = new Event("openContact");
+    window.dispatchEvent(event);
+  };
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -25,15 +31,25 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
 
         {/* Menu Links for Desktop */}
         <nav className="hidden lg:flex space-x-8 text-white font-medium">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="hover:text-zinc-300 duration-500"
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) =>
+            link.href === "#contact" ? (
+              <span
+                key={link.href}
+                onClick={openContactDialog}
+                className="hover:text-zinc-300 duration-500 cursor-pointer"
+              >
+                {link.label}
+              </span>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="hover:text-zinc-300 duration-500"
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </nav>
       </div>
 
@@ -45,16 +61,25 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
           isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         } overflow-hidden`}
       >
-        {links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="block hover:text-gray-400"
-            onClick={toggleMenu}
-          >
-            {link.label}
-          </a>
-        ))}
+        {links.map((link) =>
+          link.href === "#contact" ? (
+            <span
+              key={link.href}
+              onClick={openContactDialog}
+              className="block hover:text-gray-400 cursor-pointer"
+            >
+              {link.label}
+            </span>
+          ) : (
+            <a
+              key={link.href}
+              href={link.href}
+              className="block hover:text-gray-400"
+            >
+              {link.label}
+            </a>
+          )
+        )}
       </nav>
     </header>
   );
