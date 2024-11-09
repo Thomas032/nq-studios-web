@@ -9,10 +9,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 
 function ContactCard() {
   const [isOpen, setIsOpen] = useState(false);
   const [csrfToken, setCsrfToken] = useState("");
+  const { toast } = useToast();
 
   // Fetch CSRF token only once on component mount
   useEffect(() => {
@@ -59,6 +61,17 @@ function ContactCard() {
     const result = await response.json();
     if (response.ok) {
       console.log("Form submitted successfully", result);
+
+      // Display a success toast message
+      toast({
+        title: "Message Sent ✅",
+        description:
+          "We have received your message and will get back to you shortly.",
+      });
+      // Clear the form inputs and display a success message
+      (e.target as HTMLFormElement).reset();
+      // Close the dialog after form submission
+      setIsOpen(false);
     } else {
       console.log("Form submission failed", result);
     }

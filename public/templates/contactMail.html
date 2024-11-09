@@ -1,0 +1,102 @@
+<!-- templates/emailTemplate.html -->
+<html>
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+      }
+      .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #01a7e1;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      p {
+        color: #333333;
+        line-height: 1.6;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .contact-info {
+        margin-top: 20px;
+        background-color: #f9fafb;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+      }
+      .contact-info h3 {
+        color: #01a7e1;
+        margin-bottom: 10px;
+      }
+      .contact-info p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #333333;
+      }
+      .signature {
+        margin-top: 30px;
+        font-style: italic;
+        color: #333333;
+        font-size: 16px;
+      }
+      .footer {
+        text-align: center;
+        font-size: 14px;
+        color: #aaa;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+      }
+      .footer a {
+        color: #01a7e1;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hello {{name}},</h1>
+      <p>
+        Thank you for reaching out to us! We’ve successfully received your
+        message, and one of our team members will get back to you shortly.
+      </p>
+      <p>
+        If your inquiry is urgent, please don’t hesitate to contact us directly,
+        and we’ll make sure to assist you as soon as possible.
+      </p>
+
+      <div class="contact-info">
+        <h3>Contact Information:</h3>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:support@nqstudios.com">support@nq-studios.com</a>
+        </p>
+        <p>
+          <strong>Office Hours:</strong> Monday to Friday, 8:00 AM - 6:00 PM
+        </p>
+      </div>
+
+      <div class="signature">
+        Best regards,<br />
+        The NQ Studios Team
+      </div>
+    </div>
+  </body>
+</html>
