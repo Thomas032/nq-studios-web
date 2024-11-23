@@ -74,6 +74,13 @@ function ContactCard() {
       setIsOpen(false);
     } else {
       console.log("Form submission failed", result);
+      // Display an error toast message
+      toast({
+        title: "Something went wrong ❌",
+        description:
+          "There was an error submitting your message. Please try again.",
+        variant: "destructive",
+      });
     }
   };
 

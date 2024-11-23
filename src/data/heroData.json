@@ -1,0 +1,17 @@
+{
+  "title": "Empower your business with bold digital presence.",
+  "description": "We are a young, driven team committed to building innovative digital solutions that set your brand apart. Our fresh approach ensures every project is as unique as your vision.",
+  "buttons": [
+    {
+      "label": "Contact us",
+      "type": "primary",
+      "href": "#contact"
+    },
+    {
+      "label": "References",
+      "type": "secondary",
+      "href": "#references"
+    }
+  ],
+  "imageSrc": "/images/hero.png"
+}

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import navigationData from "@/data/navigationData.json";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -11,17 +12,14 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Empowero",
+  title: "NQ Studios",
   description: "Empower your business with next level technology",
 };
 
-const links = [
-  { href: "#processes", label: "Our Processes" },
-  { href: "#references", label: "References" },
-  { href: "#pricelist", label: "Pricelist" },
-  { href: "#team", label: "Our Team" },
-  { href: "#contact", label: "Contact" },
-];
+const links = navigationData.map((link) => ({
+  label: link.label,
+  href: link.href,
+}));
 
 export default function RootLayout({
   children,

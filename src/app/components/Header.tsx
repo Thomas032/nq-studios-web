@@ -1,13 +1,26 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = ({ links }: { links: { href: string; label: string }[] }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const openContactDialog = () => {
-    // Create and dispatch a custom event
     const event = new Event("openContact");
     window.dispatchEvent(event);
   };
@@ -17,14 +30,22 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
   };
 
   return (
-    <header className="bg-black px-6 py-4 lg:px-20">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 
+      ${
+        isScrolled ? "bg-black/80 backdrop-blur-md shadow-lg" : "bg-black"
+      } px-6 py-4 lg:px-20`}
+    >
       <div className="flex items-center justify-between lg:justify-start lg:space-x-16">
         {/* Logo */}
-        <Image src="/images/logo.svg" alt="logo" width={100} height={100} />
+        <Image src="/images/logo.svg" alt="logo" width={75} height={75} />
 
         {/* Hamburger Icon */}
         <div className="lg:hidden">
-          <button onClick={toggleMenu} className="text-white text-2xl">
+          <button
+            onClick={toggleMenu}
+            className="text-white text-2xl hover:text-zinc-300 transition-colors"
+          >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
@@ -36,7 +57,7 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
               <span
                 key={link.href}
                 onClick={openContactDialog}
-                className="hover:text-zinc-300 duration-500 cursor-pointer"
+                className=" duration-500 cursor-pointer relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-zinc-300 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full"
               >
                 {link.label}
               </span>
@@ -44,7 +65,7 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
               <a
                 key={link.href}
                 href={link.href}
-                className="hover:text-zinc-300 duration-500"
+                className=" duration-500 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-zinc-300 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -55,18 +76,18 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
 
       {/* Mobile Menu with Transition */}
       <nav
-        className={`lg:hidden text-white text-center space-y-2 ${
-          isOpen ? "mt-8" : ""
-        } text-xl transition-all duration-500 ease-in-out transform ${
-          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        } overflow-hidden`}
+        className={`lg:hidden text-white text-center space-y-2 
+          ${isOpen ? "mt-8" : ""} 
+          text-xl transition-all duration-500 ease-in-out transform 
+          ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}
+          overflow-hidden`}
       >
         {links.map((link) =>
           link.href === "#contact" ? (
             <span
               key={link.href}
               onClick={openContactDialog}
-              className="block hover:text-gray-400 cursor-pointer"
+              className="block hover:text-zinc-300 cursor-pointer py-2 transition-colors"
             >
               {link.label}
             </span>
@@ -74,7 +95,7 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
             <a
               key={link.href}
               href={link.href}
-              className="block hover:text-gray-400"
+              className="block hover:text-zinc-300 py-2 transition-colors"
             >
               {link.label}
             </a>

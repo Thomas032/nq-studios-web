@@ -6,6 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import TeamCard from "./TeamCard";
+import teamData from "@/data/teamData.json";
 
 const TeamCarousel = () => {
   return (
@@ -16,13 +17,13 @@ const TeamCarousel = () => {
       className="w-full"
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+        {teamData.map((member, index) => (
+          <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/3">
             <TeamCard
-              imageSrc="/images/employee.png"
-              name="John Smith"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec purus sodales."
-              position="CEO"
+              imageSrc={member.imageSrc}
+              name={member.name}
+              description={member.description}
+              position={member.position}
             />
           </CarouselItem>
         ))}

@@ -10,9 +10,14 @@ import Image from "next/image";
 import data from "@/data/accordionData.json";
 import { CiCircleCheck } from "react-icons/ci";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export default function AccordionDemo() {
+  const openContactDialog = () => {
+    // Create and dispatch a custom event
+    const event = new Event("openContact");
+    window.dispatchEvent(event);
+  };
+
   return (
     <Accordion
       type="single"
@@ -59,11 +64,12 @@ export default function AccordionDemo() {
                 </ul>
                 {/* display if last index */}
                 {data.indexOf(item) === data.length - 1 ? (
-                  <Link href="/contact">
-                    <Button className="bg-[#01A7E1] text-white hover:bg-[#018DBF] w-fit">
-                      {item.content.buttonText}
-                    </Button>
-                  </Link>
+                  <Button
+                    className="bg-[#01A7E1] text-white hover:bg-[#018DBF] w-fit"
+                    onClick={openContactDialog}
+                  >
+                    {item.content.buttonText}
+                  </Button>
                 ) : (
                   ""
                 )}

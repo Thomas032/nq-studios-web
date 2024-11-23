@@ -6,6 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import ReferenceCard from "./ReferenceCard";
+import referencesData from "@/data/referenceData.json";
 
 const ReferenceCarousel = () => {
   return (
@@ -16,16 +17,16 @@ const ReferenceCarousel = () => {
       className="w-full"
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {referencesData.map((reference, index) => (
           <CarouselItem
             key={index}
             className="md:basis-1/2 lg:basis-1/3 relative"
           >
             <ReferenceCard
-              imageSrc="/images/reference_placeholder.png"
-              title="ExpoBoats app"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec purus sodales."
-              link="#web_link"
+              imageSrc={reference.imageSrc}
+              title={reference.title}
+              description={reference.description}
+              link={reference.link}
             ></ReferenceCard>
           </CarouselItem>
         ))}
