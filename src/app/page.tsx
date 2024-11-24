@@ -84,7 +84,7 @@ export default function Home() {
       <LinkStrip
         message="Do you want to join us?"
         buttonText="Check our job offers"
-        link="/careers"
+        link="/vacancies"
       />
     </div>
   );

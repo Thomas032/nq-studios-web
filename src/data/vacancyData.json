@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "Senior Frontend Developer",
+    "description": "Join our core team to build next-generation web applications. Work with React, TypeScript, and modern web technologies while maintaining high standards of code quality and performance.",
+    "detailedDescription": [
+      "Design and implement new features for our web applications",
+      "Collaborate with designers to ensure high-quality implementation of UI/UX",
+      "Write clean, maintainable, and well-tested code",
+      "Mentor junior developers and contribute to technical decisions"
+    ],
+    "requirements": [
+      "5+ years of experience with modern JavaScript and frontend frameworks",
+      "Strong proficiency in React, TypeScript, and Next.js",
+      "Experience with state management solutions and modern build tools",
+      "Understanding of web performance optimization techniques"
+    ],
+    "benefits": [
+      "Competitive salary and equity package",
+      "Flexible working hours and remote work options",
+      "Learning and development budget",
+      "Modern tech stack and tools"
+    ],
+    "tags": ["React", "TypeScript", "Next.js", "TailwindCSS"],
+    "location": "Remote",
+    "type": "Full-time"
+  },
+  {
+    "id": 2,
+    "title": "Backend Developer",
+    "description": "We are looking for a skilled backend developer to join our team. You will be responsible for building and maintaining scalable server-side applications.",
+    "detailedDescription": [
+      "Develop and maintain server-side applications",
+      "Collaborate with frontend developers to integrate user-facing elements",
+      "Write clean, maintainable, and efficient code",
+      "Ensure the performance, quality, and responsiveness of applications"
+    ],
+    "requirements": [
+      "3+ years of experience with backend development",
+      "Proficiency in Node.js and Express",
+      "Experience with databases such as MongoDB and PostgreSQL",
+      "Understanding of RESTful APIs and web services"
+    ],
+    "benefits": [
+      "Competitive salary and benefits package",
+      "Opportunities for professional growth",
+      "Collaborative and inclusive work environment",
+      "Access to the latest technologies and tools"
+    ],
+    "tags": ["Node.js", "Express", "MongoDB", "PostgreSQL"],
+    "location": "Remote",
+    "type": "Full-time"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Designer",
+    "description": "We are seeking a talented UI/UX designer to create amazing user experiences. The ideal candidate should have an eye for clean and artful design, possess superior UI skills, and be able to translate high-level requirements into interaction flows and artifacts.",
+    "detailedDescription": [
+      "Collaborate with product management and engineering to define and implement innovative solutions for the product direction, visuals, and experience",
+      "Execute all visual design stages from concept to final hand-off to engineering",
+      "Conceptualize original ideas that bring simplicity and user-friendliness to complex design roadblocks",
+      "Create wireframes, storyboards, user flows, process flows, and site maps to effectively communicate interaction and design ideas"
+    ],
+    "requirements": [
+      "Proven UI/UX design experience",
+      "Demonstrable UI design skills with a strong portfolio",
+      "Proficiency in design tools such as Sketch, Figma, or Adobe XD",
+      "Excellent visual design skills with sensitivity to user-system interaction"
+    ],
+    "benefits": [
+      "Competitive salary and benefits package",
+      "Creative and collaborative work environment",
+      "Opportunities for professional growth",
+      "Flexible working hours and remote work options"
+    ],
+    "tags": ["UI/UX", "Design", "Sketch", "Figma", "Adobe XD"],
+    "location": "Remote",
+    "type": "Full-time"
+  }
+]
