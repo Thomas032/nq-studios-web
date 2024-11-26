@@ -57,6 +57,7 @@ export default function HeroSection() {
           width={500}
           height={500}
           className="mix-blend-hard-light w-full h-full object-cover"
+          quality={100}
         />
       </div>
     </section>

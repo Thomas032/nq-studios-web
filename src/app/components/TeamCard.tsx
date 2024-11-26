@@ -32,6 +32,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
           width={500}
           height={500}
           className="w-full"
+          quality={100}
         />
         <h4 className="text-xl font-medium">{name}</h4>
         <p className="text-sm">{description}</p>

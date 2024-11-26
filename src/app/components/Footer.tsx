@@ -20,10 +20,17 @@ const Footer = ({ links }: { links: { href: string; label: string }[] }) => {
         className={"absolute -left-10 top-0 z-0"}
         width={300}
         height={300}
+        quality={100}
       />
       <section className="flex flex-col space-y-5 lg:space-y-0 lg:flex-row items-start justify-start z-10">
         <div className="flex flex-col space-y-8 lg:mr-auto items-center w-full lg:w-auto lg:items-start lg:justify-start">
-          <Image src="/images/logo.svg" alt="logo" width={100} height={100} />
+          <Image
+            src="/images/logo.svg"
+            alt="logo"
+            width={100}
+            height={100}
+            quality={100}
+          />
           <p className="font-medium">{footerData.tagline}</p>
 
           {/* Shadcn Button */}

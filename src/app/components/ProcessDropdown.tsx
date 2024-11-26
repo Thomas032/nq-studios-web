@@ -44,6 +44,7 @@ export default function AccordionDemo() {
                   className="rounded-lg"
                   width={500}
                   height={500}
+                  quality={100}
                 />
               </div>
               <div className="lg:w-1/2 flex flex-col space-y-6">

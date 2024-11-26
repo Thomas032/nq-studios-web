@@ -64,6 +64,7 @@ export default function Home() {
           className={"absolute -left-10 -bottom-32 z-0"}
           width={300}
           height={300}
+          quality={100}
         />
         <SectionHeader
           title="Pricelist"
