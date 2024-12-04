@@ -25,7 +25,6 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({
           width={500}
           height={500}
           className="w-full"
-          quality={100}
         />
 
         <h4 className="text-2xl lg:text-xl font-medium">{title}</h4>

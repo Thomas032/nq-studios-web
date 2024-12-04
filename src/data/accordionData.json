@@ -3,7 +3,7 @@
     "id": "item-1",
     "title": "First Approach",
     "content": {
-      "image": "/images/approach.jpg",
+      "image": "/images/approach.webp",
       "alt": "First Approach",
       "heading": "First Approach",
       "description": "We begin our collaboration with an introductory consultation. During this initial contact, we aim to understand your project needs, objectives, and vision. This step sets the foundation for our partnership.",
@@ -19,7 +19,7 @@
     "id": "item-2",
     "title": "Meeting",
     "content": {
-      "image": "/images/meeting.png",
+      "image": "/images/meeting.webp",
       "alt": "Meeting",
       "heading": "Meeting",
       "description": "In our follow-up meeting, we delve deeper into the details of your project. This session allows us to refine our approach based on your feedback and ensure that we are aligned on the project scope and expectations.",
@@ -35,7 +35,7 @@
     "id": "item-3",
     "title": "Review",
     "content": {
-      "image": "/images/review.jpg",
+      "image": "/images/review.webp",
       "alt": "Review",
       "heading": "Review",
       "description": "Once the initial work is completed, we conduct a thorough review of the project. This is an opportunity for you to assess the progress and provide additional input, ensuring that the final outcome meets your expectations.",
@@ -51,7 +51,7 @@
     "id": "item-4",
     "title": "Final Delivery",
     "content": {
-      "image": "/images/delivery.jpg",
+      "image": "/images/delivery.webp",
       "alt": "Final Delivery",
       "heading": "Final Delivery",
       "description": "Upon completion, we deliver the final project to you. This includes all necessary documentation and resources, ensuring a smooth transition and providing you with ongoing support as needed.",

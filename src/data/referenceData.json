@@ -1,20 +1,14 @@
 [
   {
-    "imageSrc": "/images/ref_sopko.png",
+    "imageSrc": "/images/ref_sopko.webp",
     "title": "Sopko advertising website",
     "description": "A custom wordpress theme for a marketing digital marketing agency based in the Czech Republic.",
     "link": "https://sopko.cz"
   },
   {
-    "imageSrc": "/images/ref_nq.png",
+    "imageSrc": "/images/ref_nq.webp",
     "title": "Website for NQ Bot",
     "description": "WordPress website for a company that specializes in creating copping sneaker bots.",
-    "link": "#web_link2"
-  },
-  {
-    "imageSrc": "/images/ref_sopko.png",
-    "title": "FinancePro",
-    "description": "A comprehensive app for personal finance management.",
-    "link": "#web_link3"
+    "link": "https://bot.nq-studios.com/"
   }
 ]

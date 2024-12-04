@@ -40,13 +40,7 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
       <div className="flex items-center justify-between lg:justify-start lg:space-x-16">
         {/* Logo */}
         <Link href="/">
-          <Image
-            src="/images/logo.svg"
-            alt="logo"
-            width={75}
-            height={75}
-            quality={100}
-          />
+          <Image src="/images/logo.svg" alt="logo" width={75} height={75} />
         </Link>
 
         {/* Hamburger Icon */}

@@ -38,13 +38,12 @@ export default function AccordionDemo() {
           <AccordionContent className="py-4">
             <div className="flex flex-col lg:flex-row gap-6">
               <div className="lg:w-1/2">
-                <Image
+                <img
                   src={item.content.image}
                   alt={item.content.alt}
                   className="rounded-lg"
                   width={500}
                   height={500}
-                  quality={100}
                 />
               </div>
               <div className="lg:w-1/2 flex flex-col space-y-6">

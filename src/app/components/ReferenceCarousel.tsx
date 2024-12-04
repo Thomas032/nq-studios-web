@@ -10,17 +10,12 @@ import referencesData from "@/data/referenceData.json";
 
 const ReferenceCarousel = () => {
   return (
-    <Carousel
-      opts={{
-        align: "start",
-      }}
-      className="w-full"
-    >
+    <Carousel>
       <CarouselContent>
         {referencesData.map((reference, index) => (
           <CarouselItem
             key={index}
-            className="md:basis-1/2 lg:basis-1/3 relative"
+            className="md:basis-1/2 lg:basis-1/2 relative"
           >
             <ReferenceCard
               imageSrc={reference.imageSrc}

@@ -1,18 +1,18 @@
 [
   {
-    "imageSrc": "/images/borek.png",
+    "id": "founder-1",
     "name": "Tomas",
     "description": "Passionate about tech and co-leading our ambitious team with fresh ideas",
     "position": "Co-founder"
   },
   {
-    "imageSrc": "/images/borek.png",
+    "id": "founder-2",
     "name": "Borek",
     "description": "Ensures smooth projects and strong client connections",
     "position": "Co-founder"
   },
   {
-    "imageSrc": "/images/sarah.png",
+    "id": "lead-developer",
     "name": "Sarah",
     "description": "Brings creativity and technical skill to every project",
     "position": "Lead Developer"

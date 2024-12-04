@@ -48,11 +48,13 @@ export default function Home() {
         <ReferenceCarousel />
       </section>
       {/* LinkStrip component */}
+      {/*}
       <LinkStrip
         message="Do you want to see more?"
         buttonText="Discover our portfolio"
         link="/porfolio"
       />
+      */}
       {/* PriceList section */}
       <section
         className="bg-black py-20 px-6 lg:px-20 flex flex-col relative overflow-hidden"

@@ -20,7 +20,7 @@ const TeamCarousel = () => {
         {teamData.map((member, index) => (
           <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/3">
             <TeamCard
-              imageSrc={member.imageSrc}
+              id={member.id}
               name={member.name}
               description={member.description}
               position={member.position}

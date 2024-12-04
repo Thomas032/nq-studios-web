@@ -34,9 +34,9 @@ export async function POST(req: Request) {
 
     // Send notification to the user
     await sendNQMail(
-      process.env.SMTP_USER || "",
+      (process.env.COMPANY_NAME || "") + (process.env.SMTP_USER || ""),
       email,
-      "Thank you for contacting us",
+      "Thank you for contacting us 🎉",
       "We have received your message and will get back to you shortly.",
       template
     );

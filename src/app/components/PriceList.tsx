@@ -8,44 +8,9 @@ import {
 } from "@/components/ui/card";
 import { CiCircleCheck } from "react-icons/ci";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import plans from "@/data/priceData.json";
 
 const PriceList = () => {
-  const plans = [
-    {
-      title: "Basic",
-      description: "Perfect for small projects",
-      features: [
-        "Up to 5 pages",
-        "Free 1 year hosting",
-        "Free domain",
-        "Basic SEO",
-      ],
-      price: "495 €",
-    },
-    {
-      title: "Custom",
-      description: "Best for business needs.",
-      features: [
-        "Customized design",
-        "Advanced functionality",
-        "Multiple revisions",
-        "Priority support",
-      ],
-      price: "1000 + €",
-    },
-    {
-      title: "E-shop",
-      description: "All you need to start selling online.",
-      features: [
-        "Product pages",
-        "Payment integration",
-        "SEO optimization",
-        "Support",
-      ],
-      price: "695 €",
-    },
-  ];
-
   return (
     <>
       {/* Large screen layout */}

@@ -1,50 +1,32 @@
 "use client";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { MdKeyboardArrowRight } from "react-icons/md";
 
-interface TeamCardProps {
-  imageSrc: string;
+interface TeamMember {
+  id: string;
   name: string;
-  position: string;
   description: string;
-  link?: string;
+  position: string;
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({
-  imageSrc,
-  name,
-  position,
-  description,
-  link,
-}) => {
+const TeamCard: React.FC<TeamMember> = ({ name, description, position }) => {
   return (
-    <Card className="border-none shadow-none p-0 z-0">
-      <CardContent className="flex flex-col items-start justify-center gap-3 relative p-0 z-0">
-        <Badge className="absolute top-2 left-2 cursor-default hover:bg-black">
+    <Card className="border rounded-xl overflow-hidden transition-all duration-300">
+      <CardContent className="p-6 relative">
+        <Badge className="absolute top-4 left-4 z-10 cursor-default">
           {position}
         </Badge>
-        <Image
-          src={imageSrc}
-          alt={name}
-          style={{ objectFit: "contain" }}
-          width={500}
-          height={500}
-          className="w-full"
-          quality={100}
-        />
-        <h4 className="text-xl font-medium">{name}</h4>
-        <p className="text-sm">{description}</p>
-        {/* check if linked in profile link exists */}
-        {link && (
-          <a
-            href={link}
-            className="text-sm text-[#01A7E1] underline flex flex-row justify-start items-center"
-          >
-            LinkedIn profile <MdKeyboardArrowRight />
-          </a>
-        )}
+
+        <div className="flex flex-col items-start space-y-4">
+          <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center text-4xl font-bold text-gray-500 self-center">
+            {name.charAt(0)}
+          </div>
+
+          <div className="text-center w-full">
+            <h4 className="text-xl font-semibold">{name}</h4>
+            <p className="text-sm text-gray-600 mt-1">{description}</p>
+          </div>
+        </div>
       </CardContent>
     </Card>
   );

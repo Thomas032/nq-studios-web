@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/icons/logo_v2.ico" />
+        <link rel="icon" href="/icons/logo.ico" />
       </head>
       <body className={`flex flex-col ${poppins.className}`}>
         <Header links={links} />
