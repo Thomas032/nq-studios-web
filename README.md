@@ -1,30 +1,28 @@
-# Empowero
+# NQ Studios s.r.o. Website
 
-Empowero is a portfolio website designed for a digital marketing agency. This project showcases our services, previous work, and contact information in a visually appealing and user-friendly layout.
+Official website for **NQ Studios s.r.o.**, a web development company I established. The site showcases our expertise in creating modern, responsive websites and software solutions while providing an overview of our services, team, and pricing plans.
 
-## Figma Design
-
-The design for this website was created in Figma. You can view the design file here: [Figma Design](https://www.figma.com/design/TxaM9OCJgDXmv5HGMEEgVl/Untitled?node-id=0-1&t=UEFwLEZk4obsosHX-1)
+---
 
 ## Features
 
-- Responsive design
-- Clean and modern UI
-- Integrated Shadcn UI components for enhanced usability
-- Easy-to-navigate layout with a sticky footer
+- **Modern Design**: A responsive and user-friendly layout suitable for all devices.
+- **Dynamic Components**: Navigation and content are dynamically managed for easy updates.
+- **Pricing Plans**: Detailed information about our web development packages.
+- **Team Showcase**: Meet the talented professionals at NQ Studios.
+- **Contact Section**: Simplified options to reach out and collaborate.
 
-## Getting Started
+---
 
-To get a local copy up and running, follow these steps:
+## Tech Stack
 
-### Prerequisites
+- **Next.js**: A React framework for fast, server-rendered websites.
+- **TypeScript**: Ensures type safety and a better developer experience.
+- **Tailwind CSS**: A utility-first CSS framework for easy and efficient styling.
+- **NEXT UI**: Provides clean, reusable UI components for consistent design.
 
-Make sure you have [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed on your machine.
+## License
 
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/Thomas032/empowero.git
-   cd empowero
+This project is proprietary and the intellectual property of NQ Studios s.r.o.  
+Unauthorized copying, distribution, or modification of any part of this project is strictly prohibited. 
+For inquiries about licensing or usage, contact us at info@nq-studios.com
