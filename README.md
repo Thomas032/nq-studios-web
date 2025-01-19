@@ -21,6 +21,8 @@ Official website for **NQ Studios s.r.o.**, a web development company I establis
 - **Tailwind CSS**: A utility-first CSS framework for easy and efficient styling.
 - **NEXT UI**: Provides clean, reusable UI components for consistent design.
 
+---
+
 ## License
 
 This project is proprietary and the intellectual property of NQ Studios s.r.o.  
