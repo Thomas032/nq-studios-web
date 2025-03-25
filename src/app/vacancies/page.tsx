@@ -8,6 +8,7 @@ import VacancyCard from "../components/VacancyCard";
 import vacancies from "@/data/vacancyData.json";
 import VacancyDialog from "../components/VacancyDialog";
 import SecondaryHeader from "../components/SecondaryHeader";
+import ApplyCard from "../components/ApplyCard";
 
 export default function Vacancies() {
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
@@ -45,21 +46,23 @@ export default function Vacancies() {
     window.dispatchEvent(event);
   };
 
-  const scrollToPositions = () => {
-    document.getElementById("processes")?.scrollIntoView({
-      behavior: "smooth",
-    });
+  const openApplyDialog = () => {
+    const event = new Event("openApply");
+    window.dispatchEvent(event);
   };
 
   const handleApply = (id: number) => {
-    // Handle application logic here
     console.log(`Applying for position ${id}`);
+    openApplyDialog();
   };
 
   return (
     <div className="flex flex-col mt-20">
       {/* Contact box */}
       <ContactCard />
+
+      {/* Apply box */}
+      <ApplyCard />
 
       {/* Hero section with responsive layout */}
       <SecondaryHeader />

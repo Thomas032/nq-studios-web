@@ -1,14 +1,14 @@
 [
   {
-    "imageSrc": "/images/ref_sopko.webp",
-    "title": "Sopko advertising website",
-    "description": "A custom wordpress theme for a marketing digital marketing agency based in the Czech Republic.",
-    "link": "https://sopko.cz"
+    "imageSrc": "/images/astra_finance.png",
+    "title": "Astra Finance - Website + Logo design",
+    "description": "Custom website developed for a non-bank loan provider using NextJS. The project featured an optimized, user-friendly admin interface that can be managed by non-technical users.",
+    "link": "https://astrafinance.cz"
   },
   {
-    "imageSrc": "/images/ref_nq.webp",
-    "title": "Website for NQ Bot",
-    "description": "WordPress website for a company that specializes in creating copping sneaker bots.",
-    "link": "https://bot.nq-studios.com/"
+    "imageSrc": "/images/marnamax.png",
+    "title": "Marnamax - Wordpress plugin",
+    "description": "Developed a custom REST API module to ensure seamless platform connectivity between real-estate software and website.",
+    "link": "https://marnamax.cz/"
   }
 ]

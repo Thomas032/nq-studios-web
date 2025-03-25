@@ -51,12 +51,13 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="w-full lg:w-1/3 bg-black max-h-1/3">
-        <img
+        <Image
           src={heroData.imageSrc}
           alt="hero"
           width={1080}
           height={1080}
           className="mix-blend-hard-light w-full h-full object-cover"
+          priority
         />
       </div>
     </section>
