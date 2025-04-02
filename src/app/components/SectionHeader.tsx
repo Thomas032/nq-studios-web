@@ -17,22 +17,29 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   headerTextColor = "text-white",
 }) => {
   return (
-    <div className="flex flex-row justify-between mb-10">
-      <h3 className={`text-3xl ${headerTextColor}`}>{title}</h3>
-      <span
-        className={"text-right flex flex-col lg:block" + ` ${headerTextColor}`}
+    <div className="flex flex-col md:flex-row justify-between items-start mb-14 w-full">
+      <h2 className={`text-3xl font-bold ${headerTextColor} shrink-0`}>
+        <span className="relative">
+          {title}
+          <span className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-[#01A7E1] to-[#0152A1]"></span>
+        </span>
+      </h2>
+      <div
+        className={`${headerTextColor} flex flex-col space-y-3 mt-6 md:mt-0 max-w-md ml-auto`}
       >
-        {description} <br />
-        <p>
-          {contactText}{" "}
-          <span
-            onClick={onContactClick}
-            className="text-[#01A7E1] underline cursor-pointer"
-          >
-            Contact us
-          </span>
-        </p>
-      </span>
+        <p className="text-lg">{description}</p>
+        {contactText && (
+          <p>
+            {contactText}{" "}
+            <span
+              onClick={onContactClick}
+              className="text-[#01A7E1] hover:text-[#0152A1] cursor-pointer transition-colors duration-300 font-medium underline underline-offset-2"
+            >
+              Contact us
+            </span>
+          </p>
+        )}
+      </div>
     </div>
   );
 };

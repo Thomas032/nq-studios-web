@@ -11,44 +11,68 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import plans from "@/data/priceData.json";
 
 const PriceList = () => {
+  const openContactDialog = () => {
+    const event = new Event("openContact");
+    window.dispatchEvent(event);
+  };
+
   return (
     <>
       {/* Large screen layout */}
-      <div className="w-full hidden sm:block md:flex lg:flex flex-row items-center gap-10 z-10">
+      <div className="w-full hidden sm:grid md:grid lg:grid grid-cols-1 md:grid-cols-3 gap-6 z-10">
         {plans.map((plan, index) => (
           <Card
             key={index}
-            className={`bg-black text-white py-10 px-5 flex-1 ${
-              index === 1 ? "bg-[#01A7E1] space-y-10" : "space-y-5"
+            className={`border-none shadow-xl transition-all duration-500 hover:transform hover:translate-y-[-8px] ${
+              index === 1
+                ? "bg-gradient-to-br from-[#01A7E1] to-[#0a2447] text-white"
+                : "bg-black text-white"
             }`}
           >
-            <CardHeader className="flex justify-center items-center p-0">
+            <CardHeader className="flex justify-center items-center pt-8 pb-4">
               <CardTitle
-                className={`text-3xl font-thin ${
-                  index === 1 ? "text-4xl" : ""
+                className={`text-2xl font-medium ${
+                  index === 1 ? "text-3xl" : ""
                 }`}
               >
                 {plan.title}
               </CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col justify-center items-center p-0 gap-10">
-              <p className="w-full text-center text-sm">{plan.description}</p>
-              <ul className="list-none list-inside text-sm">
+            <CardContent className="flex flex-col justify-between p-6 space-y-8">
+              <p className="text-center text-sm opacity-90">
+                {plan.description}
+              </p>
+              <ul className="list-none space-y-3">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex flex-row gap-1 items-center">
-                    <CiCircleCheck /> {feature}
+                  <li key={idx} className="flex items-center gap-2 text-sm">
+                    <CiCircleCheck
+                      className={`flex-shrink-0 text-lg ${
+                        index === 1 ? "text-white" : "text-[#01A7E1]"
+                      }`}
+                    />
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="flex flex-row justify-center items-center p-0">
+            <CardFooter className="flex flex-col items-center space-y-4 pb-8">
               <p
-                className={`text-3xl ${
-                  index === 1 ? "text-4xl font-medium" : ""
+                className={`text-3xl font-bold ${
+                  index === 1 ? "text-4xl" : ""
                 }`}
               >
                 {plan.price}
               </p>
+              <button
+                onClick={openContactDialog}
+                className={`mt-4 py-2 px-6 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 ${
+                  index === 1
+                    ? "bg-white text-[#01A7E1]"
+                    : "bg-gradient-to-r from-[#01A7E1] to-[#0152A1] text-white"
+                }`}
+              >
+                Contact us
+              </button>
             </CardFooter>
           </Card>
         ))}
@@ -57,12 +81,12 @@ const PriceList = () => {
       {/* Mobile tab layout */}
       <div className="w-full sm:hidden z-10">
         <Tabs defaultValue={plans[0].title.toLowerCase()} className="w-full">
-          <TabsList className="flex justify-between bg-transparent p-0">
+          <TabsList className="flex justify-between bg-transparent p-0 mb-2">
             {plans.map((plan, index) => (
               <TabsTrigger
                 key={index}
                 value={plan.title.toLowerCase()}
-                className="text-xl text-white rounded-b-none flex-grow"
+                className="text-lg text-white data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#01A7E1] data-[state=active]:to-[#0152A1] rounded-t-md flex-grow"
               >
                 {plan.title}
               </TabsTrigger>
@@ -74,29 +98,33 @@ const PriceList = () => {
               value={plan.title.toLowerCase()}
               className="mt-0"
             >
-              <Card className={`bg-black text-white py-10 px-5 rounded-t-none`}>
+              <Card className="bg-black border-none text-white py-8 px-5 rounded-md shadow-lg">
                 <CardHeader className="flex justify-center items-center p-0">
-                  <CardTitle className={`text-4xl font-thin`}>
+                  <CardTitle className="text-3xl font-medium">
                     {plan.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="flex flex-col justify-center items-center p-0 gap-5 mt-5">
-                  <p className="w-full text-center text-xl">
+                <CardContent className="flex flex-col justify-center items-center p-0 gap-6 mt-6">
+                  <p className="w-full text-center text-lg opacity-90">
                     {plan.description}
                   </p>
-                  <ul className="list-none list-inside text-xl">
+                  <ul className="list-none space-y-3 w-full">
                     {plan.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="flex flex-row gap-1 items-center"
-                      >
-                        <CiCircleCheck /> {feature}
+                      <li key={idx} className="flex items-center gap-2">
+                        <CiCircleCheck className="text-[#01A7E1] text-xl flex-shrink-0" />
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter className="flex flex-row justify-center items-center p-0 mt-7">
-                  <p className="text-5xl">{plan.price}</p>
+                <CardFooter className="flex flex-col items-center p-0 mt-8 space-y-4">
+                  <p className="text-4xl font-bold">{plan.price}</p>
+                  <button
+                    onClick={openContactDialog}
+                    className="mt-4 py-2 px-6 bg-gradient-to-r from-[#01A7E1] to-[#0152A1] text-white rounded-md hover:shadow-lg transition-all duration-300 text-sm font-medium hover:scale-105"
+                  >
+                    Contact us
+                  </button>
                 </CardFooter>
               </Card>
             </TabsContent>

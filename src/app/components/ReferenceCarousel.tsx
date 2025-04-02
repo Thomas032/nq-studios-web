@@ -10,25 +10,37 @@ import referencesData from "@/data/referenceData.json";
 
 const ReferenceCarousel = () => {
   return (
-    <Carousel>
-      <CarouselContent>
-        {referencesData.map((reference, index) => (
-          <CarouselItem
-            key={index}
-            className="md:basis-1/2 lg:basis-1/2 relative"
-          >
-            <ReferenceCard
-              imageSrc={reference.imageSrc}
-              title={reference.title}
-              description={reference.description}
-              link={reference.link}
-            ></ReferenceCard>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious className="absolute left-5" />
-      <CarouselNext className="absolute right-5" />
-    </Carousel>
+    <div className="w-full max-w-6xl">
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full"
+      >
+        <CarouselContent className="mb-5">
+          {referencesData.map((reference, index) => (
+            <CarouselItem
+              key={index}
+              className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2"
+            >
+              <div className="h-full">
+                <ReferenceCard
+                  imageSrc={reference.imageSrc}
+                  title={reference.title}
+                  description={reference.description}
+                  link={reference.link}
+                />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <div className="flex justify-center gap-4 mt-8">
+          <CarouselPrevious className="static bg-gray-100 hover:bg-gray-200 transform-none" />
+          <CarouselNext className="static bg-gray-100 hover:bg-gray-200 transform-none" />
+        </div>
+      </Carousel>
+    </div>
   );
 };
 

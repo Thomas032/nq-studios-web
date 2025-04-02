@@ -1,13 +1,12 @@
 "use client";
-import Image from "next/image";
 import ProcessDropdown from "./components/ProcessDropdown";
 import ReferenceCarousel from "./components/ReferenceCarousel";
-import LinkStrip from "./components/LinkStrip";
 import PriceList from "./components/PriceList";
 import TeamCarousel from "./components/TeamCarousel";
 import ContactCard from "./components/ContactCard";
 import HeroSection from "./components/HeroSection";
 import SectionHeader from "./components/SectionHeader";
+import Image from "next/image";
 
 export default function Home() {
   const openContactDialog = () => {
@@ -15,22 +14,23 @@ export default function Home() {
     const event = new Event("openContact");
     window.dispatchEvent(event);
   };
+
   return (
     <div className="flex flex-col">
       {/* Contact box */}
       <ContactCard />
+
       {/* Hero Section */}
       <HeroSection />
 
       {/* Our process section */}
       <section
-        className="bg-white py-10 px-6 lg:px-20 flex flex-col"
+        className="bg-white py-20 px-6 lg:px-20 flex flex-col"
         id="processes"
       >
         <SectionHeader
           title="Our process"
-          description="4 easy steps to take your business to the next level"
-          contactText="Any questions?"
+          description="Four steps to your digital future"
           onContactClick={openContactDialog}
           headerTextColor="text-black"
         />
@@ -41,54 +41,62 @@ export default function Home() {
 
       {/* References section */}
       <section
-        className="bg-white flex flex-col px-6 lg:px-20 py-10 items-center justify-center"
+        className="bg-gray-50 flex flex-col px-6 lg:px-20 py-20 items-center"
         id="references"
       >
-        <h3 className="text-3xl mb-10">References</h3>
-        <ReferenceCarousel />
+        <div className="max-w-6xl w-full">
+          <h2 className="text-3xl font-bold text-center mb-6 relative inline-flex flex-col">
+            References
+            <span className="w-24 h-1 bg-gradient-to-r from-[#01A7E1] to-[#0152A1] mx-auto mt-2"></span>
+          </h2>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            See how we've helped businesses transform their digital presence
+          </p>
+          <ReferenceCarousel />
+        </div>
       </section>
-      {/* LinkStrip component */}
-      {/*}
-      <LinkStrip
-        message="Do you want to see more?"
-        buttonText="Discover our portfolio"
-        link="/porfolio"
-      />
-      */}
+
       {/* PriceList section */}
       <section
-        className="bg-black py-20 px-6 lg:px-20 flex flex-col relative overflow-hidden"
+        className="bg-gradient-to-br from-black to-[#0a2447] py-24 px-6 lg:px-20 flex flex-col relative overflow-hidden"
         id="pricelist"
       >
         <Image
           src="/images/smudge.svg"
           alt="footer smudge"
-          className={"absolute -left-10 -bottom-32 z-0"}
+          className="absolute -left-10 -bottom-32 z-0"
           width={300}
           height={300}
-          quality={100}
+          loading="lazy"
+          quality={80}
         />
-        <SectionHeader
-          title="Pricelist"
-          description="Individual price?"
-          onContactClick={openContactDialog}
-          headerTextColor="text-white"
-        />
+        <div className="relative z-10 mb-4">
+          <SectionHeader
+            title="Pricelist"
+            description="Transparent pricing with flexible options"
+            onContactClick={openContactDialog}
+            headerTextColor="text-white"
+          />
+        </div>
         <PriceList />
       </section>
+
       {/* Our Team section */}
       <section
-        className="bg-white flex flex-col mx-20 my-10 items-center justify-center"
+        className="bg-white flex flex-col px-6 lg:px-20 py-20 items-center"
         id="team"
       >
-        <h3 className="text-3xl mb-10">Our Team</h3>
-        <TeamCarousel />
+        <div className="max-w-6xl w-full">
+          <h2 className="text-3xl font-bold text-center mb-6 relative inline-flex flex-col">
+            Our Team
+            <span className="w-24 h-1 bg-gradient-to-r from-[#01A7E1] to-[#0152A1] mx-auto mt-2"></span>
+          </h2>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            Meet the experts who will enqueue your business for digital success
+          </p>
+          <TeamCarousel />
+        </div>
       </section>
-      <LinkStrip
-        message="Do you want to join us?"
-        buttonText="Check our job offers"
-        link="/vacancies"
-      />
     </div>
   );
 }

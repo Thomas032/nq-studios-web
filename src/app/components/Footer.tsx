@@ -12,81 +12,108 @@ const Footer = ({ links }: { links: { href: string; label: string }[] }) => {
 
   const currentYear = new Date().getFullYear();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <footer className="bg-black text-white py-10 px-6 mt-auto flex flex-col relative lg:px-24 lg:py-12 overflow-hidden">
+    <footer className="bg-black text-white py-12 px-6 mt-auto flex flex-col relative lg:px-24 lg:py-16 overflow-hidden">
       <Image
         src="/images/smudge.svg"
         alt="footer smudge"
-        className={"absolute -left-10 top-0 z-0"}
+        className="absolute -left-10 top-0 z-0"
         width={300}
         height={300}
+        loading="lazy"
+        quality={80}
       />
-      <section className="flex flex-col space-y-5 lg:space-y-0 lg:flex-row items-start justify-start z-10">
-        <div className="flex flex-col space-y-8 lg:mr-auto items-center w-full lg:w-auto lg:items-start lg:justify-start">
-          <Image src="/images/logo.svg" alt="logo" width={100} height={100} />
-          <p className="font-medium">{footerData.tagline}</p>
-
-          {/* Shadcn Button */}
-          <Button
-            className="bg-black text-white border border-white hover:bg-white hover:text-black w-1/2 lg:w-auto"
-            onClick={openContactDialog}
-          >
-            {footerData.contactButtonText}
-          </Button>
-        </div>
-
-        {/* Navigation Links */}
-        <div className="hidden lg:flex-col lg:mr-auto lg:flex">
-          <span className="font-bold text-xl mb-12">
-            {footerData.navigationTitle}
-          </span>
-          <nav className="flex flex-col space-y-2">
-            {links.map((link) =>
-              link.href === "#contact" ? (
-                <span
-                  key={link.href}
-                  onClick={openContactDialog}
-                  className="hover:text-zinc-300 duration-500 cursor-pointer"
-                >
-                  {link.label}
-                </span>
-              ) : (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="hover:text-zinc-300 duration-500"
-                >
-                  {link.label}
-                </a>
-              )
-            )}
-          </nav>
-        </div>
-
-        <div className="hidden lg:flex lg:flex-col">
-          <span className="font-bold text-xl mb-12">
-            {footerData.contactTitle}
-          </span>
-          <div className="flex flex-col space-y-3">
-            <p>{footerData.hours}</p>
-            <a href={`mailto:${footerData.email}`} className=" underline">
-              {footerData.email}
-            </a>
-            <p className="text-zinc-500">
-              {footerData.addressLine1}
-              <br />
-              {footerData.addressLine2}
+      <div className="max-w-7xl mx-auto w-full z-10">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="flex flex-col space-y-6 items-start">
+            <Image
+              src="/images/logo.svg"
+              alt="logo"
+              width={90}
+              height={90}
+              loading="lazy"
+            />
+            <p className="font-medium text-gray-300 max-w-xs">
+              {footerData.tagline}
             </p>
+
+            <Button
+              className="bg-transparent text-white border border-white hover:bg-white hover:text-black transition-colors duration-300 mt-4"
+              onClick={openContactDialog}
+            >
+              {footerData.contactButtonText}
+            </Button>
           </div>
-        </div>
-      </section>
-      <section className="flex flex-row justify-between mt-12 lg:mt-24 items-center z-10">
-        <span>
-          © {currentYear} NQ Studios. <br className="lg:hidden" />{" "}
-          {footerData.rightsReserved}
-        </span>
-        <a href="#">{footerData.backToTopText}</a>
-      </section>
+
+          {/* Navigation Links */}
+          <div className="flex flex-col">
+            <span className="font-bold text-xl mb-6">
+              {footerData.navigationTitle}
+            </span>
+            <nav className="flex flex-col space-y-3">
+              {links.map((link) =>
+                link.href === "#contact" ? (
+                  <span
+                    key={link.href}
+                    onClick={openContactDialog}
+                    className="text-gray-300 hover:text-[#01A7E1] transition-colors duration-300 cursor-pointer"
+                  >
+                    {link.label}
+                  </span>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-300 hover:text-[#01A7E1] transition-colors duration-300"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
+            </nav>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="font-bold text-xl mb-6">
+              {footerData.contactTitle}
+            </span>
+            <div className="flex flex-col space-y-4">
+              <p className="text-gray-300">{footerData.hours}</p>
+              <a
+                href={`mailto:${footerData.email}`}
+                className="text-[#01A7E1] hover:text-[#018DBF] transition-colors duration-300"
+              >
+                {footerData.email}
+              </a>
+              <div className="text-gray-400 mt-2">
+                <p>{footerData.addressLine1}</p>
+                <p>{footerData.addressLine2}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="h-px w-full bg-gray-800 my-10"></div>
+
+        <section className="flex flex-col md:flex-row justify-between items-center gap-4 z-10">
+          <span className="text-gray-400 text-sm">
+            © {currentYear} NQ Studios. {footerData.rightsReserved}
+          </span>
+          <button
+            onClick={scrollToTop}
+            className="text-[#01A7E1] hover:text-[#018DBF] transition-colors duration-300"
+          >
+            {footerData.backToTopText}
+          </button>
+        </section>
+      </div>
     </footer>
   );
 };
