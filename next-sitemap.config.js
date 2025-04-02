@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://nqstudios.com',
+  siteUrl: process.env.SITE_URL || 'https://nq-studios.com',
   generateRobotsTxt: true,
   generateIndexSitemap: true,
   sitemapSize: 7000,
@@ -16,21 +16,12 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://nqstudios.com/server-sitemap.xml',
+      'https://nq-studios.com/server-sitemap.xml',
     ],
   },
   exclude: ['/api/*', '/server-sitemap.xml'],
   outDir: 'public',
   transform: async (config, path) => {
-    // Custom transformation for pages
-    if (path.includes('/vacancies')) {
-      return {
-        loc: path,
-        changefreq: 'weekly',
-        priority: 0.8,
-        lastmod: new Date().toISOString(),
-      };
-    }
     // Default transformation for other pages
     return {
       loc: path,

@@ -18,20 +18,12 @@ export const metadata: Metadata = {
     "Empower your business with next level technology. Professional web development, digital marketing and technology solutions tailored for your growth.",
   keywords:
     "web development, digital solutions, technology services, NQ Studios, empowero",
-  metadataBase: new URL("https://nqstudios.com"),
+  metadataBase: new URL("https://nq-studios.com"),
   openGraph: {
     title: "NQ Studios s.r.o. | Web Development & Digital Solutions",
     description: "Empower your business with next level technology",
-    url: "https://nqstudios.com",
+    url: "https://nq-studios.com",
     siteName: "NQ Studios s.r.o.",
-    images: [
-      {
-        url: "/images/hero.webp",
-        width: 1200,
-        height: 630,
-        alt: "NQ Studios - Web Development & Digital Solutions",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
@@ -39,7 +31,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NQ Studios s.r.o. | Web Development & Digital Solutions",
     description: "Empower your business with next level technology",
-    images: ["/images/hero.webp"],
   },
   robots: {
     index: true,
@@ -59,13 +50,12 @@ export const metadata: Metadata = {
   },
   verification: {
     // Add these when you have them
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
+    google: "XIWlXl01kRUxyiaOq2RDvsPsn1tqIeYNC9Swvy-lmBA",
   },
   alternates: {
-    canonical: "https://nqstudios.com",
+    canonical: "https://nq-studios.com",
     languages: {
-      en: "https://nqstudios.com",
+      en: "https://nq-studios.com",
     },
   },
 };
@@ -75,7 +65,12 @@ const links = navigationData.map((link) => ({
   href: link.href,
 }));
 
-function JsonLd({ data }: { data: any }) {
+// Define a proper interface for the JsonLd data
+interface JsonLdProps {
+  data: Record<string, unknown>;
+}
+
+function JsonLd({ data }: JsonLdProps) {
   return (
     <script
       type="application/ld+json"
@@ -94,15 +89,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://nqstudios.com" />
+        <link rel="canonical" href="https://nq-studios.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <JsonLd
           data={{
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "NQ Studios s.r.o.",
-            url: "https://nqstudios.com",
-            logo: "https://nqstudios.com/images/logo.svg",
+            url: "https://nq-studios.com",
+            logo: "https://nq-studios.com/images/logo.svg",
             description:
               "Empower your business with next level technology. Professional web development and digital solutions.",
             address: {
@@ -111,9 +106,9 @@ export default function RootLayout({
             },
             sameAs: [
               // Add your social media profiles when available
-              // "https://www.linkedin.com/company/nqstudios",
-              // "https://twitter.com/nqstudios",
-              // "https://www.facebook.com/nqstudios"
+              // "https://www.linkedin.com/company/nq-studios",
+              // "https://twitter.com/nq-studios",
+              // "https://www.facebook.com/nq-studios"
             ],
           }}
         />

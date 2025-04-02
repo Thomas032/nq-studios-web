@@ -50,7 +50,8 @@ export default function Home() {
             <span className="w-24 h-1 bg-gradient-to-r from-[#01A7E1] to-[#0152A1] mx-auto mt-2"></span>
           </h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
-            See how we've helped businesses transform their digital presence
+            See how we&apos;ve helped businesses transform their digital
+            presence
           </p>
           <ReferenceCarousel />
         </div>
