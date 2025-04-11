@@ -7,7 +7,6 @@ import Link from "next/link";
 const Header = ({ links }: { links: { href: string; label: string }[] }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -21,6 +20,18 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock/unlock body scroll when mobile menu is open/closed
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   const openContactDialog = () => {
     const event = new Event("openContact");
     window.dispatchEvent(event);
@@ -30,14 +41,13 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-5
       ${
         isScrolled
-          ? "bg-gradient-to-r from-[#01A7E1]/90 to-[#0a2447]/90 backdrop-blur-md shadow-lg py-3"
-          : "bg-transparent py-5"
+          ? "bg-gradient-to-r from-[#01A7E1]/90 to-[#0a2447]/90 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
       } px-6 lg:px-20`}
     >
       <div className="flex items-center justify-between">
@@ -52,8 +62,6 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
                 height={64}
                 priority
               />
-              {/* Animated queue line underneath logo on hover */}
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-500"></div>
             </div>
           </div>
         </Link>
@@ -94,15 +102,24 @@ const Header = ({ links }: { links: { href: string; label: string }[] }) => {
           )}
         </nav>
       </div>
-
-      {/* Mobile Menu with Improved Transition */}
+      {/* Mobile Menu with Improved Transition */}{" "}
       <div
-        className={`fixed inset-0 bg-gradient-to-br from-[#01A7E1]/98 to-[#0a2447]/98 backdrop-blur-md z-40 transition-all duration-500 lg:hidden ${
+        className={`fixed top-0 left-0 w-full h-screen bg-black/80 backdrop-blur-md z-40 transition-all duration-500 lg:hidden ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
+        style={{ position: "fixed", top: 0, left: 0 }}
       >
+        {/* Close button for mobile menu */}
+        <button
+          className="absolute top-7 right-6 text-white text-2xl hover:text-blue-200 transition-colors p-2 focus:outline-none z-50"
+          onClick={toggleMenu}
+          aria-label="Close menu"
+        >
+          <FaTimes />
+        </button>
+
         <div className="h-full flex flex-col items-center justify-center">
           <nav className="text-white text-center space-y-6 px-6">
             {/* Digital pattern for visual interest */}

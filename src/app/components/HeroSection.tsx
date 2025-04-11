@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import heroData from "@/data/heroData.json";
@@ -34,7 +35,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzcuNSAzMGgyLjVsMi41IDIuNXYyLjVINDBsLTIuNS0yLjV2LTIuNXpNMjAgMzVoNXYyLjVoLTEwVjMwaDV2NXptMTcuNS01djEyLjVoLTEyLjVWMzBoMTIuNXptLTEwIDBIMjVsLTIuNSAyLjV2Ny41bDIuNSAyLjVoMi41bDIuNS0yLjV2LTcuNUwzMCAzMGgtMi41em0xMC0xMGg1djIuNWgtMTBWMTVoNXY1ek0yMCAxNWgxNXYxNUgyMFYxNXptNSAyLjVoNXY1aC0yLjVWMjBIMjV2LTIuNXptMTAgMGgxMHY1aC01di0yLjVoLTJ2MTVoNXYtMi41aDJ2NWgtMTBWMTcuNXoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 py-16 relative z-10 flex flex-col lg:flex-row items-center">
+      <div className="container mx-auto px-6 md:px-12 py-28 md:py-24 relative z-10 flex flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
           <h1
             className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight transition-all duration-700 ${
@@ -60,7 +61,7 @@ export default function HeroSection() {
           </p>
 
           <div
-            className={`flex flex-col sm:flex-row gap-5 justify-center lg:justify-start transition-all duration-700 delay-300 ${
+            className={`flex flex-row sm:flex-row gap-5 justify-center lg:justify-start transition-all duration-700 delay-300 ${
               animationComplete
                 ? "translate-y-0 opacity-100"
                 : "translate-y-10 opacity-0"

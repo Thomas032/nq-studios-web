@@ -65,12 +65,7 @@ const links = navigationData.map((link) => ({
   href: link.href,
 }));
 
-// Define a proper interface for the JsonLd data
-interface JsonLdProps {
-  data: Record<string, unknown>;
-}
-
-function JsonLd({ data }: JsonLdProps) {
+function JsonLd({ data }: { data: any }) {
   return (
     <script
       type="application/ld+json"
