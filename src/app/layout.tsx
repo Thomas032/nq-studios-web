@@ -65,7 +65,21 @@ const links = navigationData.map((link) => ({
   href: link.href,
 }));
 
-function JsonLd({ data }: { data: any }) {
+type OrganizationJsonLd = {
+  "@context": string;
+  "@type": string;
+  name: string;
+  url: string;
+  logo: string;
+  description: string;
+  address: {
+    "@type": string;
+    addressCountry: string;
+  };
+  sameAs: string[];
+};
+
+function JsonLd({ data }: { data: OrganizationJsonLd }) {
   return (
     <script
       type="application/ld+json"
